@@ -77,18 +77,38 @@
         <div class="instructions">
             Encuentra y corrige el error en la siguiente oración. Escribe la oración corregida en el cuadro de texto y haz clic en "Comprobar" para ver si has acertado.
         </div>
-        <div class="sentence">El gato se duerme en la sillas.</div>
+        <div class="sentence" id="sentence"></div>
         <textarea id="correction" placeholder="Escribe aquí la oración corregida"></textarea>
         <button class="button" onclick="checkCorrection()">Comprobar</button>
         <div id="feedback" class="feedback"></div>
     </div>
 
     <script>
+        const questions = [
+            { sentence: "El gato se duerme en la sillas.", correct: "El gato se duerme en la silla." },
+            { sentence: "Los perro están en el parque.", correct: "Los perros están en el parque." },
+            { sentence: "Maria y Juan va al cine.", correct: "María y Juan van al cine." },
+            { sentence: "Nosotros comemos manzana y naranja.", correct: "Nosotros comemos manzanas y naranjas." }
+        ];
+
+        function getRandomQuestion() {
+            return questions[Math.floor(Math.random() * questions.length)];
+        }
+
+        function loadQuestion() {
+            const question = getRandomQuestion();
+            document.getElementById('sentence').textContent = question.sentence;
+            document.getElementById('correction').value = '';
+            document.getElementById('feedback').textContent = '';
+            return question;
+        }
+
+        let currentQuestion = loadQuestion();
+
         function checkCorrection() {
             const userCorrection = document.getElementById('correction').value.trim();
-            const correctSentence = "El gato se duerme en la silla.";
             const feedback = document.getElementById('feedback');
-            if (userCorrection === correctSentence) {
+            if (userCorrection === currentQuestion.correct) {
                 feedback.textContent = "¡Correcto! ¡Bien hecho!";
                 feedback.className = "feedback correct";
             } else {
@@ -96,6 +116,9 @@
                 feedback.className = "feedback incorrect";
             }
         }
+
+        // Reload a new question on page load
+        window.onload = loadQuestion;
     </script>
 </body>
 </html>
