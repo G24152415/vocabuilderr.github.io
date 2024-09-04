@@ -65,11 +65,10 @@ html, body {
 
 /* Sección Cuerpo */
 .cuerpo {
-    height: 100vh;
+    margin-top:5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 5%; /* Asegura que el contenido no se pegue a los bordes */
     box-sizing: border-box; /* Incluye padding y border en el width y height */
 }
 
@@ -79,7 +78,6 @@ html, body {
     gap: 20px; /* Espacio entre las tarjetas */
     max-width: 800px;
     width: 100%;
-    padding-top: 10%;
     box-sizing: border-box; /* Incluye padding en el width */
 }
 
@@ -96,10 +94,10 @@ html, body {
     justify-content: center;
     align-items: center;
 }
-.card .card3 {
+
+.card3{
     margin: 0 200px;
 }
-
 .card:hover {
     background-color: #e0f2f1;
     transform: scale(1.05);
@@ -163,3 +161,4 @@ html, body {
     color: #33519c; /* Color consistente con el tema */
     cursor: pointer; /* Indicar que el icono es clickeable */
 }
+
