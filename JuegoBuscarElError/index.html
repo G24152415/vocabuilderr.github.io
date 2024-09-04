@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Busca el Error!</title>
+    <style>
+        body { 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            background: linear-gradient(to right, #131213, #620c0c);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            width: 80%;
+            max-width: 700px;
+        }
+        h1 {
+            color: #382b31;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .sentence {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 2px dashed #121111;
+            border-radius: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #191718;
+            font-size: 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .button {
+            background-color: #25101a;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #4a4749;
+        }
+        .feedback {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .feedback.correct { color: #4CAF50; }
+        .feedback.incorrect { color: #FF6347; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Busca el Error!</h1>
+        <div class="instructions">
+            Encuentra y corrige el error en la siguiente oración. Escribe la oración corregida en el cuadro de texto y haz clic en "Comprobar" para ver si has acertado.
+        </div>
+        <div class="sentence">El gato se duerme en la sillas.</div>
+        <textarea id="correction" placeholder="Escribe aquí la oración corregida"></textarea>
+        <button class="button" onclick="checkCorrection()">Comprobar</button>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <script>
+        function checkCorrection() {
+            const userCorrection = document.getElementById('correction').value.trim();
+            const correctSentence = "El gato se duerme en la silla.";
+            const feedback = document.getElementById('feedback');
+            if (userCorrection === correctSentence) {
+                feedback.textContent = "¡Correcto! ¡Bien hecho!";
+                feedback.className = "feedback correct";
+            } else {
+                feedback.textContent = "Incorrecto. Intenta de nuevo.";
+                feedback.className = "feedback incorrect";
+            }
+        }
+    </script>
+</body>
+</html>
