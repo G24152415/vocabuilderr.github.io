@@ -5,23 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Busca el Error!</title>
     <style>
-        body { 
-            font-family: 'Comic Sans MS', cursive, sans-serif; 
-            background: linear-gradient(to right, #131213, #620c0c);
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            margin: 20px auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            width: 80%;
-            max-width: 700px;
-        }
+        body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-image: url('../imagen/WhatsApp Image 2024-09-05 at 12.17.12 AM (3).jpeg');
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    color: #333;
+    text-align: center;
+    height: 100vh;
+    width: 100vw; /* Ajusta el ancho al viewport */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el scroll si el contenido se desborda */
+}
+
+.container {
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 80%;
+    max-width: 700px;
+    position: relative; /* Para posicionar el contenido sobre la imagen de fondo */
+    z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+}
+
         h1 {
             color: #382b31;
             margin-bottom: 20px;
@@ -81,6 +91,7 @@
         <textarea id="correction" placeholder="Escribe aquí la oración corregida"></textarea>
         <button class="button" onclick="checkCorrection()">Comprobar</button>
         <div id="feedback" class="feedback"></div>
+        <button class="button" onclick="loadQuestion()">Nueva Pregunta</button>
     </div>
 
     <script>
@@ -91,24 +102,25 @@
             { sentence: "Nosotros comemos manzana y naranja.", correct: "Nosotros comemos manzanas y naranjas." }
         ];
 
+        let currentQuestion;
+
         function getRandomQuestion() {
             return questions[Math.floor(Math.random() * questions.length)];
         }
 
         function loadQuestion() {
-            const question = getRandomQuestion();
-            document.getElementById('sentence').textContent = question.sentence;
+            currentQuestion = getRandomQuestion();
+            document.getElementById('sentence').textContent = currentQuestion.sentence;
             document.getElementById('correction').value = '';
             document.getElementById('feedback').textContent = '';
-            return question;
         }
 
-        let currentQuestion = loadQuestion();
-
         function checkCorrection() {
-            const userCorrection = document.getElementById('correction').value.trim();
+            const userCorrection = document.getElementById('correction').value.trim().toLowerCase();
+            const correctAnswer = currentQuestion.correct.trim().toLowerCase();
             const feedback = document.getElementById('feedback');
-            if (userCorrection === currentQuestion.correct) {
+            
+            if (userCorrection === correctAnswer) {
                 feedback.textContent = "¡Correcto! ¡Bien hecho!";
                 feedback.className = "feedback correct";
             } else {
@@ -117,7 +129,7 @@
             }
         }
 
-        // Reload a new question on page load
+        // Cargar una nueva pregunta cuando se carga la página
         window.onload = loadQuestion;
     </script>
 </body>
