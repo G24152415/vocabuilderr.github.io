@@ -10,8 +10,9 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Comfortaa', sans-serif;
-    background-color: #f0f4f8; /* Color de fondo coherente con la página de inicio */
+    background-color: #ADE0DB; /* Color de fondo coherente con la página de inicio */
 }
+
 
 /* Swiper Container */
 .swiper {
@@ -22,14 +23,15 @@ html, body {
 /* Swiper Slide */
 .swiper-slide {
     width: 300px;
-    height: 10%;
-    background-color: #ffffff; /* Fondo blanco para las tarjetas */
-    border-radius: 15px; /* Bordes redondeados como en la página de inicio */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más ligera */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Añadido para una transición más suave */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 
 .swiper-slide:hover {
     background-color: #e0f2f1; /* Color de fondo similar a la página de inicio */
@@ -121,3 +123,4 @@ html, body {
 .heart-icon.animate-heart {
     animation: heartBeat 1s ease;
 }
+
