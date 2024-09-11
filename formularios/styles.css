@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Comfortaa', sans-serif;
-    background-color: #f0f4f8; /* Color de fondo coherente con la página de inicio */
+    background-color: #ADE0DB; /* Color de fondo coherente con la página de inicio */
 }
 
 /* Cabecera */
@@ -61,11 +61,12 @@ html, body {
 
 .header .btn button:hover {
     background-color: #33519c;
+    color: #ffffff; /* Cambia el color del texto al pasar el ratón */
 }
 
 /* Sección Cuerpo */
 .cuerpo {
-    margin-top:5%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,16 +96,16 @@ html, body {
     align-items: center;
 }
 
-.card3{
-    margin: 0 200px;
+.card3 {
+    margin: 0 200px; /* Asegúrate de que esta clase no cause problemas en diferentes tamaños de pantalla */
 }
+
 .card:hover {
     background-color: #e0f2f1;
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     animation: bounce 0.6s ease; /* Agrega la animación de rebote */
 }
-
 
 .content h2 {
     font-size: 24px;
@@ -154,11 +155,9 @@ html, body {
     }
 }
 
-
 /* Iconos */
 .icon i {
     font-size: 24px; /* Tamaño más grande para los iconos */
     color: #33519c; /* Color consistente con el tema */
     cursor: pointer; /* Indicar que el icono es clickeable */
 }
-
