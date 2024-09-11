@@ -27,7 +27,19 @@
     </nav>
     <a href="SobreNosotros/sobrenosotros.html" class="btn"><button>Sobre Nosotros</button></a>
   </header>
-
+  <div class="carousel">
+    <div class="carousel-images">
+        <div class="carousel-slide">
+            <img src="imagen/close-up-opened-books.jpg" alt="Slide 1">
+        </div>
+        <div class="carousel-slide">
+            <img src="imagen/faceless-man-making-notes-book.jpg" alt="Slide 2">
+        </div>
+        <div class="carousel-slide">
+            <img src="imagen/high-angle-kid-cheating-school-test.jpg" alt="Slide 3">
+        </div>
+    </div>
+</div>
   <section class="cuerpo">
     <div class="card">
       <div class="personaje imagen_personaje"></div>
@@ -76,12 +88,9 @@
 
   <section class="texto-aparte">
     <h2>Vocabuilder</h2>
-    <p>Bienvenido a Vocabuilder, tu plataforma educativa dedicada a transformar la manera en que aprendes gramática. En un mundo donde el dominio del lenguaje es fundamental, nuestra misión es hacer que el proceso de aprendizaje sea accesible, divertido y efectivo para todos, desde estudiantes de primaria hasta adultos que desean mejorar sus habilidades lingüísticas. 
-    En Vocabuilder, creemos que aprender gramática no tiene por qué ser aburrido ni intimidante. Es por eso que hemos creado un ecosistema completo de herramientas y recursos diseñados para inspirar la curiosidad, fomentar la exploración y facilitar el aprendizaje significativo.
-    Nuestro enfoque se basa en la idea de que la práctica constante y la exposición repetida son clave para internalizar conceptos gramaticales. Por eso, ofrecemos una amplia variedad de actividades interactivas, juegos estimulantes y videos educativos envolventes que permiten a los estudiantes sumergirse en el idioma de una manera práctica y envolvente.
-    Desde juegos de gramática que desafían tus habilidades hasta videos instructivos que explican conceptos difíciles de manera clara y concisa, en Vocabuilder encontrarás todo lo que necesitas para avanzar en tu viaje hacia la maestría del lenguaje. Nuestros recursos didácticos, que incluyen hojas de trabajo descargables, guías de estudio detalladas y actividades interactivas, están diseñados para adaptarse a diferentes estilos de aprendizaje y niveles de habilidad.
-    Ya sea que estés aprendiendo gramática como parte de tu educación formal, buscando mejorar tus habilidades para avanzar en tu carrera profesional o simplemente explorando por diversión, Vocabuilder está aquí para apoyarte en cada paso del camino. Únete a nuestra comunidad de estudiantes entusiastas y descubre un nuevo mundo de posibilidades lingüísticas con Vocabuilder.
-    ¡Comienza tu viaje hoy mismo y haz que el aprendizaje de la gramática sea una experiencia emocionante y gratificante con Vocabuilder!</p>
+    <p>Bienvenido a Vocabuilder, tu plataforma educativa dedicada a transformar la manera en que aprendes . En un mundo donde el dominio del lenguaje es fundamental, nuestra misión es hacer que el proceso de aprendizaje sea accesible, divertido y efectivo para todos, desde estudiantes de primaria hasta adultos que desean mejorar sus habilidades lingüísticas. En Vocabuilder, creemos que aprender gramática no tiene por qué ser aburrido ni intimidante. Es por eso que hemos creado un ecosistema completo de herramientas y recursos diseñados para inspirar la curiosidad, fomentar la exploración y facilitar el aprendizaje significativo. Nuestro enfoque se basa en la idea de que la práctica constante y la exposición repetida son clave para internalizar conceptos gramaticales. Por eso, ofrecemos una amplia variedad de actividades interactivas, juegos estimulantes y videos educativos envolventes que permiten a los estudiantes sumergirse en el idioma de una manera práctica y envolvente. Desde juegos de gramática que desafían tus habilidades hasta videos instructivos que explican conceptos difíciles de manera clara y concisa, en Vocabuilder encontrarás todo lo que necesitas para avanzar en tu viaje hacia la maestría del lenguaje.
+      Únete a nuestra comunidad de estudiantes entusiastas y descubre un nuevo mundo de posibilidades lingüísticas con Vocabuilder. ¡Comienza tu viaje hoy mismo y haz que el aprendizaje de la gramática sea una experiencia emocionante y gratificante con Vocabuilder!
+    </p>
   </section>
 
   <!-- Footer -->
@@ -175,6 +184,28 @@
         });
       });
     });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.carousel-images');
+    const totalSlides = document.querySelectorAll('.carousel-slide').length;
+    let index = 0;
+
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        index = (index + 1) % totalSlides; // Ciclo a través de las diapositivas
+        showSlide(index);
+    }
+
+    // Cambia cada 4 segundos (4000 milisegundos)
+    setInterval(nextSlide, 4000);
+
+    showSlide(index); // Mostrar la primera diapositiva
+});
+
+
   </script>
 </body>
 </html>
