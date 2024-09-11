@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #ADE0DB;
 }
 
 .header {
@@ -123,7 +124,7 @@ body {
 
 /* Estilos de la Sección de Preguntas Frecuentes */
 .faq-section {
-    background-color: #f1f8e9;
+    background-color: #ffffff;
     border-radius: 15px;
     padding: 40px;
     margin: 20px auto;
@@ -136,7 +137,6 @@ body {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #33519c;
 }
 
 .faq-container {
@@ -149,8 +149,8 @@ body {
 }
 
 .faq-question {
-    background: #33519c;
-    color: white;
+    background: #ADE0DB;
+    color: #33519c;
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -163,7 +163,7 @@ body {
 }
 
 .faq-question:hover {
-    background: #33519c;
+    background: #8afff3;
 }
 
 .faq-answer {
