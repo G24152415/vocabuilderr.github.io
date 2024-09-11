@@ -6,22 +6,32 @@
     <title>Construye la Oración</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(to right, #a2c2e8, #d5eeff);
-            color: #333;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            margin: 20px auto;
-            padding: 30px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            width: 80%;
-            max-width: 700px;
-        }
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background-image: url('../imagen/WhatsApp Image 2024-09-05 at 12.17.12 AM (2).jpeg');
+        background-size: cover; /* Asegura que la imagen cubra toda el área */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita la repetición de la imagen */
+        color: #333;
+        text-align: center;
+        height: 100vh;
+        width: 100vw; /* Ajusta el ancho al viewport */
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Evita el scroll si el contenido se desborda */
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        width: 80%;
+        max-width: 700px;
+        position: relative; /* Para posicionar el contenido sobre la imagen de fondo */
+        z-index: 1; /* Asegura que el contenedor esté sobre el fondo */
+    }
+
         h1 {
             color: #4a90e2;
             margin-bottom: 20px;
